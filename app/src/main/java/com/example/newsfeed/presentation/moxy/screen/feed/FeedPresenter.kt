@@ -32,7 +32,7 @@ class FeedPresenter @Inject constructor (private val repository: Repository): Ba
             }
 
             override fun showErrorMessage(error: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                viewState.showNetworkError()
             }
 
             override fun showRefreshProgress(show: Boolean) {

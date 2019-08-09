@@ -14,9 +14,9 @@ class ConverterImpl @Inject constructor(): Converter<Response, @JvmSuppressWildc
         NewsEntity(
             it.title,
             it.desription,
-            it.url,
+            convertDate(it.publishedAt),
             it.urlToImage,
-            convertDate(it.publishedAt)
+            it.url
         )
     }
 

@@ -8,6 +8,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.newsfeed.R
 import com.example.newsfeed.domain.entity.entity.NewsEntity
 import com.example.newsfeed.presentation.moxy.common.BaseFragment
+import com.example.newsfeed.presentation.moxy.common.showSnackbar
 import kotlinx.android.synthetic.main.feed_fragment.*
 import javax.inject.Inject
 
@@ -34,6 +35,10 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
 
         feedAdapter.setItems(news)
 
+    }
+
+    override fun showNetworkError() {
+        recyclerView.showSnackbar("Network error")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

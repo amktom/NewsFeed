@@ -7,4 +7,7 @@ interface FeedView : MvpView {
 
     fun showFeed(news: List<NewsEntity>)
 
+    fun showNetworkError()
+
+
 }
