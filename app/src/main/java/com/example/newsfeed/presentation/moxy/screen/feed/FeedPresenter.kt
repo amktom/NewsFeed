@@ -1,4 +1,4 @@
-package com.example.newsfeed.presentation.moxy.screen.Feed
+package com.example.newsfeed.presentation.moxy.screen.feed
 
 import com.example.newsfeed.domain.entity.entity.NewsEntity
 import com.example.newsfeed.domain.entity.repository.Repository

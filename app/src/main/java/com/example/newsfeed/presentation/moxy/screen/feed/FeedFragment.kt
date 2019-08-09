@@ -1,4 +1,4 @@
-package com.example.newsfeed.presentation.moxy.screen.Feed
+package com.example.newsfeed.presentation.moxy.screen.feed
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -7,6 +7,7 @@ import com.example.newsfeed.R
 import com.example.newsfeed.domain.entity.entity.NewsEntity
 import com.example.newsfeed.presentation.moxy.common.BaseFragment
 import kotlinx.android.synthetic.main.feed_fragment.*
+import javax.inject.Inject
 
 class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
 
@@ -15,6 +16,7 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
         fun createInstance() = FeedFragment()
     }
 
+    @Inject
     @InjectPresenter
     lateinit var feedPresenter: FeedPresenter
 

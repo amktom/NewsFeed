@@ -1,7 +1,7 @@
 package com.example.newsfeed.dagger
 
-import com.example.newsfeed.presentation.moxy.screen.Feed.FeedFragment
-import com.example.newsfeed.presentation.moxy.screen.Splash.SplashFragment
+import com.example.newsfeed.presentation.moxy.screen.feed.FeedFragment
+import com.example.newsfeed.presentation.moxy.screen.splash.SplashFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -14,5 +14,5 @@ interface MainActivityModule {
 
     @FragmentScope
     @ContributesAndroidInjector
-    fun provideSplasgFragment(): SplashFragment
+    fun provideSplashFragment(): SplashFragment
 }

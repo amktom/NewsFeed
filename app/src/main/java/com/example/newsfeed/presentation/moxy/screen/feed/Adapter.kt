@@ -1,4 +1,4 @@
-package com.example.newsfeed.presentation.moxy.screen.Feed
+package com.example.newsfeed.presentation.moxy.screen.feed
 
 import android.view.LayoutInflater
 import android.view.View
@@ -18,8 +18,10 @@ class Adapter (private val onLoadPost: () -> Unit) : RecyclerView.Adapter<Recycl
         const val NEWS = 1
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when(viewType) {
+        NEWS -> Holder.createIntance(parent)
+
+        else -> throw IllegalStateException("Illegal view holder type")
     }
 
     override fun getItemCount(): Int = news.size

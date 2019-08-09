@@ -1,5 +1,6 @@
-package com.example.newsfeed.presentation.moxy.screen.Splash
+package com.example.newsfeed.presentation.moxy.screen.splash
 
+import com.arellomobile.mvp.InjectViewState
 import com.example.newsfeed.presentation.moxy.common.BasePresenter
 import com.example.newsfeed.presentation.moxy.navigation.Screen
 import io.reactivex.Completable
@@ -9,9 +10,8 @@ import ru.terrakok.cicerone.Router
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class SplashPresenter @Inject constructor(
-    private val router: Router
-) : BasePresenter<SplashView>() {
+@InjectViewState
+class SplashPresenter @Inject constructor(private val router: Router) : BasePresenter<SplashView>() {
 
 
     override fun onFirstViewAttach() {

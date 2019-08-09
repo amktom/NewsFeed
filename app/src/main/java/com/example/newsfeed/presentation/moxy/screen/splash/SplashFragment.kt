@@ -1,9 +1,10 @@
-package com.example.newsfeed.presentation.moxy.screen.Splash
+package com.example.newsfeed.presentation.moxy.screen.splash
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.newsfeed.R
 import com.example.newsfeed.presentation.moxy.common.BaseFragment
+import javax.inject.Inject
 
 class SplashFragment : BaseFragment(R.layout.splash_fragment), SplashView {
 
@@ -11,10 +12,11 @@ class SplashFragment : BaseFragment(R.layout.splash_fragment), SplashView {
         fun createInstance() = SplashFragment()
     }
 
+    @Inject
     @InjectPresenter
-    lateinit var presenter: SplashPresenter
+    lateinit var splashPresenter: SplashPresenter
 
     @ProvidePresenter
-    fun providePresenter(): SplashPresenter = presenter
+    fun providePresenter(): SplashPresenter = splashPresenter
 
 }

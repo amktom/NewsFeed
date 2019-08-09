@@ -1,8 +1,8 @@
 package com.example.newsfeed.presentation.moxy.navigation
 
 import androidx.fragment.app.Fragment
-import com.example.newsfeed.presentation.moxy.screen.Feed.FeedFragment
-import com.example.newsfeed.presentation.moxy.screen.Splash.SplashFragment
+import com.example.newsfeed.presentation.moxy.screen.feed.FeedFragment
+import com.example.newsfeed.presentation.moxy.screen.splash.SplashFragment
 
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
