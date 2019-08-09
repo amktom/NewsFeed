@@ -1,13 +1,13 @@
-package com.example.newsfeed.presentation.moxy.Screen.Feed
+package com.example.newsfeed.presentation.moxy.screen.Feed
 
-import com.example.newsfeed.data.data.models.News
 import com.example.newsfeed.domain.entity.entity.NewsEntity
 import com.example.newsfeed.domain.entity.repository.Repository
 import com.example.newsfeed.presentation.moxy.common.BasePresenter
 import com.example.newsfeed.presentation.moxy.common.Paginator
 import io.reactivex.android.schedulers.AndroidSchedulers
+import javax.inject.Inject
 
-class FeedPresenter (private val repository: Repository): BasePresenter<FeedView>() {
+class FeedPresenter @Inject constructor (private val repository: Repository): BasePresenter<FeedView>() {
 
     private val paginator = Paginator(
         {

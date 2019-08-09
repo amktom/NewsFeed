@@ -4,6 +4,6 @@ data class NewsEntity(
     val title: String,
     val description: String,
     val publishedAt: String,
-    val urlImg: String?,
+    val urlImg: String,
     val url: String
 )

@@ -1,9 +1,8 @@
-package com.example.newsfeed.presentation.moxy.Screen.Feed
+package com.example.newsfeed.presentation.moxy.screen.Feed
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewParent
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsfeed.R
 import com.example.newsfeed.domain.entity.entity.NewsEntity

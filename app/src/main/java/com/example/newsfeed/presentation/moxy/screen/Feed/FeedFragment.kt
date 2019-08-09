@@ -1,9 +1,5 @@
-package com.example.newsfeed.presentation.moxy.Screen.Feed
+package com.example.newsfeed.presentation.moxy.screen.Feed
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter

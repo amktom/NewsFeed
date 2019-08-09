@@ -1,6 +1,5 @@
-package com.example.newsfeed.presentation.moxy.Screen.MainActivity
+package com.example.newsfeed.presentation.moxy.screen.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -32,7 +31,7 @@ class MainActivity : MvpAppCompatActivity(), HasSupportFragmentInjector, MainVie
     override fun supportFragmentInjector(): AndroidInjector<Fragment> = supportFragmentInjectorImpl
 
     @Inject
-    lateinit var navigattorHolder: NavigatorHolder
+    lateinit var navigatorHolder: NavigatorHolder
 
     private val navigator: SupportAppNavigator by lazy {
         Navigator(this, supportFragmentManager, R.id.container)
@@ -40,16 +39,16 @@ class MainActivity : MvpAppCompatActivity(), HasSupportFragmentInjector, MainVie
 
     override fun onResume() {
         super.onResume()
-        navigattorHolder.setNavigator(navigator)
+        navigatorHolder.setNavigator(navigator)
     }
 
     override fun onPause() {
         super.onPause()
-        navigattorHolder.removeNavigator()
+        navigatorHolder.removeNavigator()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        AndroidInjection.inject(this)
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }

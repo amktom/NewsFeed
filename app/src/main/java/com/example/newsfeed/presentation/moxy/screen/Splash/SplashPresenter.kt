@@ -1,4 +1,4 @@
-package com.example.newsfeed.presentation.moxy.Screen.Splash
+package com.example.newsfeed.presentation.moxy.screen.Splash
 
 import com.example.newsfeed.presentation.moxy.common.BasePresenter
 import com.example.newsfeed.presentation.moxy.navigation.Screen
@@ -7,8 +7,9 @@ import io.reactivex.schedulers.Schedulers
 import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.terrakok.cicerone.Router
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
-class SplashPresenter(
+class SplashPresenter @Inject constructor(
     private val router: Router
 ) : BasePresenter<SplashView>() {
 

@@ -1,4 +1,4 @@
-package com.example.newsfeed.presentation.moxy.Screen.Feed
+package com.example.newsfeed.presentation.moxy.screen.Feed
 
 import com.arellomobile.mvp.MvpView
 import com.example.newsfeed.domain.entity.entity.NewsEntity

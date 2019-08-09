@@ -7,8 +7,9 @@ import com.example.newsfeed.domain.entity.entity.NewsEntity
 import com.example.newsfeed.domain.entity.repository.Repository
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class RespositoryImpl(private val api: Api,
+class RespositoryImpl @Inject constructor(private val api: Api,
                       private val converter: Converter<Response, List<NewsEntity>>) : Repository {
 
     override fun getNews(page: Int): Single<List<NewsEntity>>  = api.getNews(page)
