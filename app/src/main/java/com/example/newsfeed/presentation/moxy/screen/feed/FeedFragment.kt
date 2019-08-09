@@ -1,5 +1,7 @@
 package com.example.newsfeed.presentation.moxy.screen.feed
 
+import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
@@ -32,6 +34,12 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
 
         feedAdapter.setItems(news)
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initFeed()
+        feedPresenter.loadNews()
     }
 
     private fun initFeed() {

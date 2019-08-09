@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import com.example.newsfeed.presentation.moxy.moxy.MvpAppCompatFragment
+import dagger.android.support.AndroidSupportInjection
 
 abstract class BaseFragment (@LayoutRes private val layoutId: Int) : MvpAppCompatFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidSupportInjection.inject(this)
         super.onCreate(savedInstanceState)
     }
 
