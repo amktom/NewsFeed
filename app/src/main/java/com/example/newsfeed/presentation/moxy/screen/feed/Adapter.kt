@@ -13,12 +13,17 @@ class Adapter (private val onLoadPost: () -> Unit) : RecyclerView.Adapter<Recycl
 
     private lateinit var onClickNews: (Holder) -> Unit
     private var news = mutableListOf<NewsEntity>()
+    private var isRepeat = false
 
     companion object {
         const val NEWS = 1
+        const val REPEAT = 2
     }
 
+    override fun getItemViewType(position: Int): Int = if (position == news.size - 1 && isRepeat) REPEAT else NEWS
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when(viewType) {
+
         NEWS -> Holder.createIntance(parent)
 
         else -> throw IllegalStateException("Illegal view holder type")

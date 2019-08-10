@@ -10,30 +10,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
     
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Top Headlines"
-                android:fontFamily="sans-serif-light"
-                android:textSize="17sp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="10dp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
             </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
     

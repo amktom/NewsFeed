@@ -1,5 +1,6 @@
 package com.example.newsfeed.presentation.moxy.screen.feed
 
+import com.arellomobile.mvp.InjectViewState
 import com.example.newsfeed.domain.entity.entity.NewsEntity
 import com.example.newsfeed.domain.entity.repository.Repository
 import com.example.newsfeed.presentation.moxy.common.BasePresenter
@@ -7,6 +8,7 @@ import com.example.newsfeed.presentation.moxy.common.Paginator
 import io.reactivex.android.schedulers.AndroidSchedulers
 import javax.inject.Inject
 
+@InjectViewState
 class FeedPresenter @Inject constructor (private val repository: Repository): BasePresenter<FeedView>() {
 
     private val paginator = Paginator(
@@ -27,7 +29,7 @@ class FeedPresenter @Inject constructor (private val repository: Repository): Ba
 
             override fun showData(show: Boolean, data: List<NewsEntity>) {
 
-                viewState.showFeed(data.map { NewsEntity(it.title, it.description, it.publishedAt, it.urlImg, it.url)})
+                viewState.showFeed(data)
 
             }
 
