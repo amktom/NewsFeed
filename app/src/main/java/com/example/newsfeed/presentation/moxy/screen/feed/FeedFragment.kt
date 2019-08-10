@@ -14,15 +14,6 @@ import javax.inject.Inject
 
 class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
 
-    override fun showProgress() {
-        refreshLayout.isRefreshing = true
-    }
-
-    override fun hideProgress() {
-        refreshLayout.isRefreshing = false
-    }
-
-
     companion object {
         fun createInstance() = FeedFragment()
     }
@@ -69,5 +60,13 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
             TODO("Впилить вэб вьбю")
         }
 
+    }
+
+    override fun showProgress() {
+        refreshLayout.isRefreshing = true
+    }
+
+    override fun hideProgress() {
+        refreshLayout.isRefreshing = false
     }
 }

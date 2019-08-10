@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 fun ImageView.loadGlideImgUrl(url: String) =
     Glide.with(this)
         .load(url)
+        .placeholder(R.drawable.ic_image_black_24dp)
         .into(this)
 
 fun ImageView.loadGlideImgId(resId: Int) =
