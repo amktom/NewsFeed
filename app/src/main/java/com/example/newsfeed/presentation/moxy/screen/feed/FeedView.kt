@@ -9,5 +9,8 @@ interface FeedView : MvpView {
 
     fun showNetworkError()
 
+    fun showProgress()
+
+    fun hideProgress()
 
 }

@@ -15,10 +15,12 @@ class FeedPresenter @Inject constructor (private val repository: Repository): Ba
         {
             repository.getNews(it)
                 .observeOn(AndroidSchedulers.mainThread())
+                .doFinally { viewState.hideProgress() }
+
         }, object : Paginator.ViewController<NewsEntity> {
 
             override fun showEmptyProgress(show: Boolean) {
-
+                viewState.showProgress()
             }
 
             override fun showEmptyError(show: Boolean, error: Throwable?) {
@@ -38,10 +40,11 @@ class FeedPresenter @Inject constructor (private val repository: Repository): Ba
             }
 
             override fun showRefreshProgress(show: Boolean) {
-
+                viewState.showProgress()
             }
 
             override fun showPageProgress(show: Boolean) {
+                viewState.showProgress()
 
             }
         })
@@ -49,11 +52,14 @@ class FeedPresenter @Inject constructor (private val repository: Repository): Ba
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         paginator.refresh()
-//        viewState.showFeed()
     }
 
     fun loadNews() {
         paginator.loadNewPage()
+    }
+
+    fun refreshPosts() {
+        paginator.refresh()
     }
 
     override fun onDestroy() {

@@ -14,6 +14,14 @@ import javax.inject.Inject
 
 class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
 
+    override fun showProgress() {
+        refreshLayout.isRefreshing = true
+    }
+
+    override fun hideProgress() {
+        refreshLayout.isRefreshing = false
+    }
+
 
     companion object {
         fun createInstance() = FeedFragment()
@@ -45,6 +53,9 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
         super.onViewCreated(view, savedInstanceState)
         initFeed()
         feedPresenter.loadNews()
+
+        refreshLayout.setOnRefreshListener(feedPresenter::refreshPosts)
+
     }
 
     private fun initFeed() {
