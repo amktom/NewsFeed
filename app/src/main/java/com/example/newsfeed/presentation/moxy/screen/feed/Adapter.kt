@@ -40,6 +40,7 @@ class Adapter (private val onLoadPost: () -> Unit) : RecyclerView.Adapter<Recycl
         when(holder) {
             is Holder -> {
                 holder.bind(news[position])
+                initListner(holder)
             }
         }
     }
@@ -58,7 +59,6 @@ class Adapter (private val onLoadPost: () -> Unit) : RecyclerView.Adapter<Recycl
         news.addAll(listNews)
         notifyDataSetChanged()
     }
-
 
 }
 

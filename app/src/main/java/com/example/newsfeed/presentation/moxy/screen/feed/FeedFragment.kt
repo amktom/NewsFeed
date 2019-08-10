@@ -9,6 +9,7 @@ import com.example.newsfeed.R
 import com.example.newsfeed.domain.entity.entity.NewsEntity
 import com.example.newsfeed.presentation.moxy.common.BaseFragment
 import com.example.newsfeed.presentation.moxy.common.showSnackbar
+import com.example.newsfeed.presentation.moxy.screen.web.WebActivity
 import kotlinx.android.synthetic.main.feed_fragment.*
 import javax.inject.Inject
 
@@ -43,6 +44,7 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initFeed()
+        initListner()
         feedPresenter.loadNews()
 
         refreshLayout.setOnRefreshListener(feedPresenter::refreshPosts)
@@ -57,9 +59,12 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
 
     private fun initListner() {
         feedAdapter.addOnClickNews {
-            TODO("Впилить вэб вьбю")
+            val intent = WebActivity.instance(
+                requireContext(),
+                feedAdapter.getUrlFromPosition(it.adapterPosition)
+            )
+            startActivity(intent)
         }
-
     }
 
     override fun showProgress() {
