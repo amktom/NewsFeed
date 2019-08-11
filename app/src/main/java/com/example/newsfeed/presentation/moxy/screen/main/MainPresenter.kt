@@ -9,7 +9,6 @@ class MainPresenter @Inject constructor (private val router: Router) : BasePrese
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-//        router.newRootScreen(Screen.SplashScreen())
         router.newRootScreen(Screen.FeedScreen())
     }
 }
