@@ -36,7 +36,6 @@ class FeedPresenter @Inject constructor (private val repository: Repository): Ba
             }
 
             override fun showErrorMessage(error: Throwable) {
-                viewState.showNetworkError()
                 viewState.showButton()
             }
 

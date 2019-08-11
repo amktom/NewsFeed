@@ -45,9 +45,7 @@ class Adapter(private val onLoadPost: () -> Unit) : RecyclerView.Adapter<Recycle
                 initListner(holder)
             }
 
-            is ReloadHolder -> {
-                initListner(holder)
-            }
+            is ReloadHolder -> initListner(holder)
         }
     }
 
