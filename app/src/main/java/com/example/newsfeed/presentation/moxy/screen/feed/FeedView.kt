@@ -13,4 +13,6 @@ interface FeedView : MvpView {
 
     fun hideProgress()
 
+    fun showButton()
+
 }

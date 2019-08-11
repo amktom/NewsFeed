@@ -65,6 +65,7 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
             )
             startActivity(intent)
         }
+        feedAdapter.addOnClickReload { feedPresenter.refreshPosts() }
     }
 
     override fun showProgress() {
@@ -73,5 +74,9 @@ class FeedFragment : BaseFragment(R.layout.feed_fragment), FeedView {
 
     override fun hideProgress() {
         refreshLayout.isRefreshing = false
+    }
+
+    override fun showButton() {
+        feedAdapter.showReloadButton()
     }
 }
